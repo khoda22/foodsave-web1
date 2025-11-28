@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 35px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+/* Títulos */
+h2 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 30px;
+  color: #012F16;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-top: 25px;
+}
+
+/* Select nativo */
+select {
+  width: 85%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid #B6C471;
+  background: #FFF;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.25s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: #FFCC02;
+}
+
+/* Label */
+label {
+  font-weight: 600;
+  color: #333;
+  display: block;
+  margin-top: 15px;
+  font-size: 15px;
+}
+
+/* Botón */
+button {
+  margin-top: 15px;
+  width: 85%;
+  padding: 12px 0;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: #FFCC02;
+  color: #663300;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+button:hover {
+  background-color: #B6C471;
+  color: #012F16;
+  transform: translateY(-2px);
+}
+
+/* Lista de notificaciones */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  text-align: left;
+}
+
+li {
+  background: #FFF0D4;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  font-size: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.05);
+}
+
+b {
+  color: #012F16;
+}
+
+/* Línea separadora */
+hr {
+  margin: 25px 0;
+  border: none;
+  border-top: 2px solid #B6C471;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .container {
+    padding: 25px;
+  }
+  
+  select, button {
+    width: 100%;
+  }
+}

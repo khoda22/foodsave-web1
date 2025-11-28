@@ -1,0 +1,84 @@
+/* Tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.container {
+  max-width: 550px;
+  margin: 40px auto;
+  padding: 35px;
+  background: #FFF;
+  border-radius: 18px;
+  box-shadow: 0px 6px 18px rgba(0,0,0,0.08);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Título */
+h2 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 32px;
+  color: #012F16; /* Verde oscuro de tu paleta */
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+/* Botón principal */
+button[matbutton="elevated"], button[mat-raised-button], button {
+  width: 100%;
+  padding: 12px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+
+  background-color: #B6C471; /* Verde claro principal */
+  color: #012F16; /* Verde oscuro */
+  border-radius: 12px;
+
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background-color: #FFCC02; /* Amarillo vibrante */
+  color: #663300; /* Café */
+  transform: translateY(-2px);
+}
+
+/* Mat-select y mat-input con bordes suaves */
+.mat-mdc-form-field-focus-overlay {
+  background-color: rgba(182, 196, 113, 0.15); /* Verde claro suave */
+}
+
+.mat-mdc-text-field-wrapper {
+  border-radius: 10px !important;
+}
+
+/* Labels */
+mat-label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Errores */
+mat-error {
+  font-size: 13px;
+  color: #C62828 !important;
+}
+
+/* Datepicker icon */
+.mat-datepicker-toggle-default-icon {
+  color: #012F16 !important;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}

@@ -1,0 +1,60 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>Calificacion Receta</h2>
+  </div>
+  <div style="text-align: center; margin: 3%">
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Receta</mat-label>
+        <mat-select formControlName="receta" required>
+          @for (p of listaRecetas; track p.idReceta) {
+          <mat-option [value]="p.idReceta">
+            {{ p.titulo }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('receta')?.hasError('required')) {
+        <mat-error>El campo receta es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      <br>
+      <mat-form-field class="example-full-width">
+        <mat-label>usuario</mat-label>
+        <mat-select formControlName="usuario" required>
+          @for (p of listaUsuarios; track p.idUsuario) {
+          <mat-option [value]="p.idUsuario">
+            {{ p.username }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('usuario')?.hasError('required')) {
+        <mat-error>El campo usuario es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Calificacion:</mat-label>
+        <mat-select formControlName="calificacionC" required>
+          @for (p of tipos; track p.value) {
+          <mat-option [value]="p.value">
+            {{ p.viewValue }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('calificacionC')?.hasError('required')) {
+        <mat-error>Puntua la calificacion!!</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <button matButton="elevated">Registrar</button>
+
+      <br />
+    </form>
+  </div>
+</div>

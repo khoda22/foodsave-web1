@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Abril+Fatface&display=swap');
+
+:root {
+  --cream: #FFF0D4;
+  --green-dark: #012F16;
+  --green-mid: #B6C471;
+  --green-light: #E5EEC7;
+}
+
+/* RESET */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 14px 40px;
+  background: var(--cream);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo img {
+  width: 48px;
+}
+
+.logo span {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 26px;
+  color: var(--green-dark);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 18px;
+  color: var(--green-dark);
+  font-weight: 500;
+  padding-bottom: 5px;
+  transition: 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  border-bottom: 3px solid var(--green-mid);
+}
+
+.btn-login {
+  border-radius: 12px;
+  padding: 8px 20px;
+  background: var(--green-mid) !important;
+  color: var(--green-dark) !important;
+  font-weight: 600;
+}
+
+/* ========== HERO ========== */
+.hero {
+  display: flex;
+  padding: 140px 60px 60px;
+  background: var(--green-light);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.hero-content {
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-family: 'Abril Fatface';
+  font-size: 70px;
+  color: var(--green-dark);
+}
+
+.hero-content h1 span {
+  color: var(--green-mid);
+}
+
+.subtitle {
+  margin-top: -20px;
+  font-size: 22px;
+  color: var(--green-dark);
+  opacity: 0.8;
+}
+
+.input-area {
+  margin-top: 25px;
+  display: flex;
+}
+
+.input-area input {
+  padding: 14px 20px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  font-size: 16px;
+}
+
+.input-area button {
+  padding: 14px 25px;
+  border-radius: 0 20px 20px 0;
+  border: none;
+  background: var(--green-mid);
+  color: var(--green-dark);
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.input-area button:hover {
+  background: #FFCC02;
+}
+
+.hero-img img {
+  width: 350px;
+  filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.2));
+}
+
+/* ========== SECTIONS ========== */
+section {
+  padding: 100px 60px;
+}
+
+.info,
+.team {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  background: var(--cream);
+  border-radius: 20px;
+  margin: 40px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.info-img img,
+.team-img img {
+  width: 250px;
+}
+
+.info-text h2,
+.team-text h2 {
+  font-size: 42px;
+  font-family: 'Abril Fatface';
+  color: var(--green-dark);
+}
+
+.info-text p,
+.team-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--green-dark);
+}
+
+/* ANIMACIÓN */
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* FOOTER */
+.footer {
+  background: var(--green-dark);
+  color: white;
+  padding: 25px;
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 950px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .info,
+  .team {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ================== CAROUSEL ================== */
+.carousel-section {
+  width: 100%;
+  background: var(--green-light);
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-container {
+  width: 85%;
+  max-width: 1100px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  background: var(--cream);
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  text-align: center;
+  padding: 40px;
+}
+
+.carousel-item img {
+  width: 350px;
+  filter: drop-shadow(0px 8px 20px rgba(0,0,0,0.2));
+}
+
+.carousel-item h2 {
+  margin-top: 20px;
+  font-size: 28px;
+  font-family: 'Abril Fatface';
+  color: var(--green-dark);
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--green-mid);
+  color: var(--green-dark);
+  border: none;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 22px;
+  transition: 0.3s ease;
+}
+
+.carousel-btn:hover {
+  background: #FFCC02;
+}
+
+.carousel-btn.left {
+  left: 15px;
+}
+
+.carousel-btn.right {
+  right: 15px;
+}
+
+/* ================== FEATURES ================== */
+.features {
+  padding: 100px 40px;
+  background: var(--cream);
+  text-align: center;
+}
+
+.features-title {
+  font-size: 42px;
+  font-family: 'Abril Fatface';
+  margin-bottom: 40px;
+  color: var(--green-dark);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+  gap: 30px;
+}
+
+.feature-card {
+  background: white;
+  border-radius: 18px;
+  padding: 25px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+}
+
+.feature-card mat-icon {
+  font-size: 45px;
+  color: var(--green-mid);
+  margin-bottom: 10px;
+}
+
+.feature-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--green-dark);
+}
+
+.feature-card p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.4;
+}

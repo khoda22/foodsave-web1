@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600&display=swap');
+
+
+
+/* Título */
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 38px;
+  color: #012F16;
+  text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5);
+  margin-bottom: 40px;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Encabezados */
+th.mat-header-cell {
+  font-weight: 700;
+  background: #012F16;
+  color: #FFFFFF;
+  font-size: 15px;
+  text-align: center !important;
+}
+
+/* Celdas */
+td.mat-cell {
+  font-size: 14px;
+  padding: 14px;
+  color: #333;
+  text-align: center !important;
+}
+
+/* Alternar colores de filas */
+tr.mat-row:nth-child(even) {
+  background: #FFF7E1;
+}
+
+tr.mat-row:nth-child(odd) {
+  background: #FFFFFF;
+}
+
+/* Hover row */
+tr.mat-row:hover {
+  background: #FFCC02 !important;
+  color: #663300;
+  transition: 0.2s ease;
+}
+
+/* Redondeado superior para encabezados */
+tr.mat-header-row {
+  height: 60px;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  td.mat-cell, th.mat-header-cell {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,13 @@
+<div class="recipe-container">
+  <h2>🍳 Recetas con IA (DeepSeek)</h2>
+
+  <div class="input-box">
+    <input type="text" placeholder="Ingresa un ingrediente..." [(ngModel)]="ingrediente">
+    <button (click)="buscar()">Buscar</button>
+  </div>
+
+  <div class="result">
+    <h3>Resultado:</h3>
+    <p>{{ respuesta }}</p>
+  </div>
+</div>

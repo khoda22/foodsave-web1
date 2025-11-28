@@ -1,0 +1,86 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>Ingrediente para Receta</h2>
+  </div>
+  <div style="text-align: center; margin: 3%">
+    <form [formGroup]="form" (submit)="aceptar()">
+
+      <mat-form-field>
+        <mat-label>Cantidad</mat-label>
+        <input matInput formControlName="cantidad" type="number" />
+        <mat-error>
+          @if (form.get('cantidad')?.hasError('required')) { Ingresa cantidad!! }
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Unidad</mat-label>
+        <mat-select formControlName="unidadI" required>
+          @for (p of tiposU; track p.value) {
+          <mat-option [value]="p.value">
+            {{ p.viewValue }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('unidadI')?.hasError('required')) {
+        <mat-error>Ingresa unidad!!</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nota</mat-label>
+        <mat-select formControlName="notaI" required>
+          @for (p of tiposN; track p.value) {
+          <mat-option [value]="p.value">
+            {{ p.viewValue }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('notaI')?.hasError('required')) {
+        <mat-error>Ingresa nota!!</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Receta</mat-label>
+        <mat-select formControlName="receta" required>
+          @for (p of listaRecetas; track p.idReceta) {
+          <mat-option [value]="p.idReceta">
+            {{ p.titulo }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('receta')?.hasError('required')) {
+        <mat-error>El campo proveedor es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Producto</mat-label>
+        <mat-select formControlName="producto" required>
+          @for (p of listaProductos; track p.idProducto) {
+          <mat-option [value]="p.idProducto">
+            {{ p.nombre }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('producto')?.hasError('required')) {
+        <mat-error>El campo proveedor es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <button matButton="elevated">Registrar</button>
+
+      <br />
+    </form>
+  </div>
+</div>

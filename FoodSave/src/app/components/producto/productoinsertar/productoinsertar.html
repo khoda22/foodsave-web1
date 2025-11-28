@@ -1,0 +1,95 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>{{ edicion ? 'Editar Producto' : 'Registrar Producto' }}</h2>
+  </div>
+  <div style="text-align: center; margin: 3%">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <!--Editar-->
+      @if (edicion) {
+      <mat-form-field>
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="id" required />
+
+        @if (form.get('id')?.hasError('required')) {
+        <mat-error>El campo id es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      }
+      <br />
+
+      <mat-form-field>
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="nombreP" required />
+
+        @if (form.get('nombreP')?.hasError('required')) {
+        <mat-error>Ingrese nombre!!.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Categoria:</mat-label>
+        <mat-select formControlName="categoriaP" required>
+          @for (p of tipos; track p.value) {
+          <mat-option [value]="p.value">
+            {{ p.viewValue }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('categoriaP')?.hasError('required')) {
+        <mat-error>Ingrese categoria!!</mat-error>
+        }
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Vida util</mat-label>
+        <input matInput formControlName="vidaUtilP" type="number" />
+        <mat-error>
+          @if (form.get('vidaUtilP')?.hasError('required')) { Ingrese Vida util!! }
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Estado:</mat-label>
+        <mat-select formControlName="estadoP" required>
+          @for (p of tipos2; track p.value) {
+          <mat-option [value]="p.value">
+            {{ p.viewValue }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('estadoP')?.hasError('required')) {
+        <mat-error>Ingrese Estado!!</mat-error>
+        }
+      </mat-form-field>
+      <br>
+
+      <mat-form-field>
+        <mat-label>Codigo de Barras</mat-label>
+        <input matInput formControlName="codigoBarrasP" required />
+
+        @if (form.get('codigoBarrasP')?.hasError('required')) {
+        <mat-error>Ingrese Codigo!!.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Peso</mat-label>
+        <input matInput formControlName="pesoUnitarioP" type="number" />
+        <mat-error>
+          @if (form.get('pesoUnitarioP')?.hasError('required')) { Ingrese peso!! }
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <button matButton="elevated">{{ edicion ? 'Actualizar' : 'Registrar' }}</button>
+
+      <br />
+    </form>
+  </div>
+</div>

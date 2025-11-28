@@ -1,0 +1,55 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>Registro</h2>
+  </div>
+  <div style="text-align: center; margin: 3%">
+    <form [formGroup]="form" (ngSubmit)="registrar()">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput formControlName="username" required />
+
+        @if (form.get('username')?.hasError('required')) {
+        <mat-error>Ingresa username</mat-error>
+        }
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required />
+
+        @if (form.get('email')?.hasError('required')) {
+        <mat-error>Ingresa email</mat-error>
+        }
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password" required />
+
+        @if (form.get('password')?.hasError('required')) {
+        <mat-error>Ingresa contraseña</mat-error>
+        }
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Foto (URL)</mat-label>
+        <input matInput formControlName="foto" />
+
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Ubicación</mat-label>
+        <input matInput formControlName="ubicacion" required />
+
+        @if (form.get('ubicacion')?.hasError('required')) {
+        <mat-error>Ingresa ubicacion</mat-error>
+        }
+      </mat-form-field>
+      <br />
+      <button mat-raised-button color="primary">Registrar</button>
+      <br>
+      <br />
+      <button matButton routerLink="/" type="button">Volver</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* Fondo estilo “almacén ecológico” acorde a FoodSave */
+.container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #012F16 0%, #B6C471 40%, #FFF0D4 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Título */
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 38px;
+  color: #FFFFFF;
+  text-shadow: 0px 0px 6px rgba(0,0,0,0.4);
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Línea decorativa estilo almacén */
+h1::after {
+  content: "";
+  width: 200px;
+  height: 4px;
+  background: #FFCC02;
+  display: block;
+  margin: 12px auto 0;
+  border-radius: 10px;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Encabezados */
+th.mat-header-cell {
+  font-weight: 700;
+  font-size: 15px;
+  background: #012F16;
+  color: #FFCC02;
+  text-align: center !important;
+  letter-spacing: 0.5px;
+}
+
+/* Celdas */
+td.mat-cell {
+  font-size: 14px;
+  padding: 14px;
+  text-align: center !important;
+  color: #333;
+}
+
+/* Filas alternadas */
+tr.mat-row:nth-child(even) {
+  background: #EAF5D6;
+}
+
+tr.mat-row:nth-child(odd) {
+  background: #FFFFFF;
+}
+
+/* Hover estilo “resaltar stock” */
+tr.mat-row:hover {
+  background: rgba(255, 204, 2, 0.35) !important;
+  color: #663300;
+  transition: 0.2s ease;
+}
+
+/* Iconos de acción */
+button[matbutton], button {
+  background: none !important;
+  border: none !important;
+  cursor: pointer;
+}
+
+button mat-icon {
+  font-size: 22px;
+  transition: 0.2s ease;
+}
+
+/* Editar */
+button mat-icon:first-child {
+  color: #1976D2; 
+}
+
+button:hover mat-icon:first-child {
+  color: #0D47A1;
+  transform: scale(1.15);
+}
+
+/* Eliminar */
+button mat-icon:last-child {
+  color: #D32F2F;
+}
+
+button:hover mat-icon:last-child {
+  color: #9A0000;
+  transform: scale(1.15);
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  td.mat-cell, th.mat-header-cell {
+    font-size: 12px;
+    padding: 10px;
+  }
+}

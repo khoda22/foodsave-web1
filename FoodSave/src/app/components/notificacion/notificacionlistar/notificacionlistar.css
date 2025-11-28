@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600&display=swap');
+
+
+
+/* Título estilo sistema de alertas */
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 40px;
+  color: #663300;
+  text-align: center;
+  text-shadow: 0px 0px 8px rgba(255,255,255,0.7);
+  letter-spacing: 1px;
+  position: relative;
+  margin-bottom: 45px;
+}
+
+/* Icono decorativo tipo alarma */
+h1::after {
+  content: "🔔";
+  display: block;
+  font-size: 28px;
+  margin: 10px auto 0;
+  color: #663300;
+  animation: bellshake 1s infinite ease-in-out;
+}
+
+@keyframes bellshake {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(8deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-8deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Encabezados */
+th.mat-header-cell {
+  font-weight: 700;
+  font-size: 15px;
+  background: #663300;
+  color: #FFCC02;
+  letter-spacing: 0.7px;
+  text-align: center !important;
+}
+
+/* Celdas */
+td.mat-cell {
+  font-size: 14px;
+  padding: 14px;
+  text-align: center !important;
+  color: #333;
+}
+
+/* Filas alternas */
+tr.mat-row:nth-child(even) {
+  background: #FFF7E1;
+}
+
+tr.mat-row:nth-child(odd) {
+  background: #FFFFFF;
+}
+
+/* Hover tipo alerta */
+tr.mat-row:hover {
+  background: rgba(255, 204, 2, 0.45) !important;
+  color: #663300;
+  transition: 0.2s ease;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  td.mat-cell, th.mat-header-cell {
+    font-size: 12px;
+    padding: 10px;
+  }
+}
