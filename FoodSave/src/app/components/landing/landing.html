@@ -1,0 +1,132 @@
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">
+    <img src="assets/logo/logo.png" alt="FoodSave Logo" />
+    <span>FoodSave</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+    <li><a href="#foodsave" class="nav-link">FoodSave</a></li>
+    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+  </ul>
+
+  <div class="nav-buttons">
+    <button mat-raised-button color="primary" class="btn-login" routerLink="/login">
+      Iniciar Sesión
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <h1><span>Organiza</span> tus alimentos</h1>
+    <p class="subtitle">Reduce desperdicios · Cuida tu bolsillo · Cuida el planeta</p>
+
+    <div class="input-area">
+      <input type="text" placeholder="Descubre FoodSave" />
+      <button routerLink="/login">Empezar</button>
+    </div>
+  </div>
+
+  <div class="hero-img">
+    <img src="assets/landing/alimentos.png" alt="Alimentos" />
+  </div>
+</section>
+
+<!-- ================== CAROUSEL ================== -->
+<section class="carousel-section">
+  <div class="carousel-container">
+
+    <div class="carousel" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+      <div class="carousel-item">
+        <img src="assets/landing/slide1.png" alt="Slide 1" />
+        <h2>Escanea tus productos fácilmente</h2>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/landing/slide2.png" alt="Slide 2" />
+        <h2>Controla fechas de vencimiento</h2>
+      </div>
+
+      <div class="carousel-item">
+        <img src="assets/landing/slide3.png" alt="Slide 3" />
+        <h2>Recibe alertas a tiempo</h2>
+      </div>
+    </div>
+
+    <!-- Controles -->
+    <button class="carousel-btn left" (click)="prevSlide()">❮</button>
+    <button class="carousel-btn right" (click)="nextSlide()">❯</button>
+  </div>
+</section>
+
+<!-- ================== FEATURES ================== -->
+<section class="features">
+  <h2 class="features-title">¿Por qué usar FoodSave?</h2>
+
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <mat-icon>qr_code_scanner</mat-icon>
+      <h3>Escaneo Inteligente</h3>
+      <p>Registra productos rápidamente con el código de barras.</p>
+    </div>
+
+    <div class="feature-card">
+      <mat-icon>inventory_2</mat-icon>
+      <h3>Gestión de Inventario</h3>
+      <p>Organiza tus alimentos y controla tus compras.</p>
+    </div>
+
+    <div class="feature-card">
+      <mat-icon>notifications_active</mat-icon>
+      <h3>Alertas de Vencimiento</h3>
+      <p>Recibe recordatorios antes de que tus alimentos expiren.</p>
+    </div>
+
+    <div class="feature-card">
+      <mat-icon>menu_book</mat-icon>
+      <h3>Recetas Anti-Desperdicio</h3>
+      <p>Te sugerimos recetas con productos próximos a vencerse.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ¿QUÉ ES FOODSAVE? -->
+<section id="foodsave" class="info fade-in">
+  <div class="info-img">
+    <img src="assets/logo/logo.png" alt="FoodSave Logo" />
+  </div>
+
+  <div class="info-text">
+    <h2>¿Qué es FoodSave?</h2>
+    <p>
+      FoodSave es una plataforma inteligente diseñada para <strong>evitar el desperdicio de alimentos</strong>.
+      Escanea productos, controla su vencimiento y recibe alertas para aprovechar todo antes de que expire.
+    </p>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros" class="team fade-in">
+  <div class="team-text">
+    <h2>Sobre Nosotros</h2>
+    <p>
+      Somos una startup comprometida con la sostenibilidad. Nuestro objetivo es
+      ayudar a las familias a consumir alimentos de forma eficiente, ahorrando dinero y reduciendo el impacto ambiental.
+    </p>
+  </div>
+
+  <div class="team-img">
+    <img src="assets/landing/conocerte.png" alt="Team" />
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <p>🌿 FoodSave — Reduciendo el desperdicio alimentario desde 2025</p>
+</footer>

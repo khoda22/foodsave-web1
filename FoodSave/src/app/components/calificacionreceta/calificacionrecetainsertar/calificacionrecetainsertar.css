@@ -1,0 +1,79 @@
+/* Tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600&display=swap');
+
+.container {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 35px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Título */
+h2 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 30px;
+  color: #012F16; /* Verde oscuro */
+  margin-bottom: 30px;
+}
+
+/* Form fields */
+mat-form-field {
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+/* Estilo de los selects e inputs */
+.mat-mdc-text-field-wrapper {
+  border-radius: 10px !important;
+}
+
+.mat-mdc-form-field-focus-overlay {
+  background-color: rgba(182, 196, 113, 0.15) !important; /* Verde pastel suave */
+}
+
+mat-label {
+  font-weight: 500;
+  color: #333;
+}
+
+/* Errores */
+mat-error {
+  font-size: 13px;
+  color: #D32F2F !important;
+}
+
+/* Botón */
+button[matbutton="elevated"], 
+button[mat-raised-button], 
+button {
+  width: 100%;
+  padding: 12px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+
+  background-color: #FFCC02; /* Amarillo de marca */
+  color: #663300; /* Café de marca */
+  transition: all 0.25s ease;
+}
+
+button:hover {
+  background-color: #B6C471; /* Verde claro */
+  color: #012F16; /* Verde oscuro */
+  transform: translateY(-2px);
+}
+
+/* Espaciado extra en mobile */
+@media (max-width: 480px) {
+  .container {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+}

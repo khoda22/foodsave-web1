@@ -1,0 +1,139 @@
+<div class="example-label">
+  @if(verificar()){
+  <mat-toolbar>
+    <!-- LOGO / TITULO -->
+    <div class="nav-left">
+      <button mat-button routerLink="/dashboard" class="nav-title">
+        <mat-icon>home</mat-icon>
+        FoodSave
+      </button>
+    </div>
+
+    <!-- MENÚ PRINCIPAL -->
+    <div class="nav-center">
+      @if(isAdmin()){
+      <button mat-button [matMenuTriggerFor]="menuUsuario">
+        <mat-icon>group</mat-icon> Usuarios
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menuRol">
+        <mat-icon>admin_panel_settings</mat-icon> Roles
+      </button>
+      } @if(isClient()){
+
+      <button mat-button [matMenuTriggerFor]="menuInventario">
+        <mat-icon>inventory_2</mat-icon> Inventario
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menuProducto">
+        <mat-icon>shopping_basket</mat-icon> Productos
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menuEscaneo">
+        <mat-icon>qr_code_scanner</mat-icon> Escaneos
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menuReceta">
+        <mat-icon>menu_book</mat-icon> Recetas
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menuNotificacion">
+        <mat-icon>notifications_active</mat-icon> Notificaciones
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menuIngrediente">
+        <mat-icon>restaurant</mat-icon> Ingredientes
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menuCalificacion">
+        <mat-icon>star_rate</mat-icon> Calificaciones
+      </button>
+      }
+    </div>
+
+    <!-- PERFIL / SALIR -->
+    <div class="nav-right">
+      <button mat-button [matMenuTriggerFor]="menuSalir">
+        <mat-icon>person</mat-icon> Usuario
+      </button>
+    </div>
+  </mat-toolbar>
+  }
+
+  <!-- Subseccion -->
+  <mat-menu #menuInventario="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/inventario/listas"><mat-icon>list</mat-icon>Lista</button>
+    <button mat-menu-item routerLink="/inventario/nuevos"><mat-icon>add</mat-icon>Insertar</button>
+  </mat-menu>
+
+  <!-- Subseccion -->
+  <mat-menu #menuProducto="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/producto/listas"><mat-icon>list</mat-icon>Lista</button>
+    <button mat-menu-item routerLink="/producto/nuevos"><mat-icon>add</mat-icon>Insertar</button>
+  </mat-menu>
+
+  <!-- Subseccion -->
+  <mat-menu #menuUsuario="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/usuario/listas"><mat-icon>list</mat-icon>Lista</button>
+  </mat-menu>
+
+  <!-- Subseccion -->
+  <mat-menu #menuRol="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/rol/listas"><mat-icon>list</mat-icon>Lista</button>
+    <button mat-menu-item routerLink="/rol/nuevos"><mat-icon>add</mat-icon>Insertar</button>
+  </mat-menu>
+
+  <!-- Subseccion -->
+  <mat-menu #menuEscaneo="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/escaneo/listas"><mat-icon>list</mat-icon>Lista</button>
+    <button mat-menu-item routerLink="/escaneo/nuevos"><mat-icon>add</mat-icon>Insertar</button>
+  </mat-menu>
+
+  <!-- Subseccion -->
+  <mat-menu #menuReceta="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/receta/listas"><mat-icon>list</mat-icon>Lista</button>
+    <button mat-menu-item routerLink="/receta/nuevos"><mat-icon>add</mat-icon>Insertar</button>
+  </mat-menu>
+
+  <!-- Subseccion -->
+  <mat-menu #menuNotificacion="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/notificacion/listas"><mat-icon>list</mat-icon>Lista</button>
+    <button mat-menu-item routerLink="/notificacion/nuevos">
+      <mat-icon>add</mat-icon>Insertar
+    </button>
+  </mat-menu>
+
+  <!-- Subseccion -->
+  <mat-menu #menuIngrediente="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/ingrediente/listas"><mat-icon>list</mat-icon>Lista</button>
+    <button mat-menu-item routerLink="/ingrediente/nuevos"><mat-icon>add</mat-icon>Insertar</button>
+  </mat-menu>
+
+  <!-- Subseccion -->
+  <mat-menu #menuCalificacion="matMenu">
+    <!-- subseccion list -->
+    <button mat-menu-item routerLink="/calificacion/listas"><mat-icon>list</mat-icon>Lista</button>
+    <button mat-menu-item routerLink="/calificacion/nuevos">
+      <mat-icon>add</mat-icon>Insertar
+    </button>
+  </mat-menu>
+
+  <mat-menu #menuSalir="matMenu">
+    <button mat-menu-item routerLink="/login" (click)="cerrar()">
+      <mat-icon>logout</mat-icon>
+      <span>Cerrar sesión</span>
+    </button>
+    <button mat-menu-item>
+      Rol:
+      <span>{{ role }}</span>
+    </button>
+  </mat-menu>
+</div>

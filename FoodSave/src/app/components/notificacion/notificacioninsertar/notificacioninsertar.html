@@ -1,0 +1,31 @@
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>Notificacion</h2>
+
+    <h2>Generar notificaciones</h2>
+
+    <label>Seleccione Inventario:</label>
+    <br>
+    <select [(ngModel)]="idInventario">
+      <option [ngValue]="null">-- Seleccione --</option>
+      <option *ngFor="let inv of inventarios" [value]="inv.idInventario">
+        {{ inv.idInventario }} - {{ inv.producto.nombre }}
+      </option>
+    </select>
+
+    <button (click)="generarNotificacion()">Generar</button>
+
+    <hr />
+
+    <h3>Notificaciones generadas:</h3>
+
+    <div *ngIf="notificaciones.length === 0">No hay notificaciones aún.</div>
+
+    <ul *ngIf="notificaciones.length > 0">
+      <li *ngFor="let n of notificaciones">
+        <b>{{ n.tipo ? 'POR VENCER' : 'VENCIDO' }}</b>
+        - {{ n.mensaje }} - {{ n.fechaProgramada | date : 'short' }}
+      </li>
+    </ul>
+  </div>
+</div>

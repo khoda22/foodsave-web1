@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* Fondo temático: experiencia de usuario + estilo social */
+.container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #B6C471 0%, #FFF0D4 40%, #EF9145 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Título estilo “perfil / red social saludable” */
+h1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 40px;
+  color: #012F16;
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 45px;
+  position: relative;
+}
+
+/* Decoración tipo avatar redondeado */
+h1::after {
+  content: "👤";
+  display: block;
+  font-size: 28px;
+  margin: 10px auto 0;
+  color: #012F16;
+  opacity: 0.9;
+}
+
+/* Tabla */
+table {
+  width: 100%;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #FFFFFF;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+}
+
+/* Encabezados */
+th.mat-header-cell {
+  font-weight: 700;
+  font-size: 15px;
+  background: #012F16;
+  color: #FFCC02;
+  text-align: center !important;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+/* Celdas */
+td.mat-cell {
+  font-size: 14px;
+  padding: 14px;
+  text-align: center !important;
+  color: #333;
+}
+
+/* Foto (muestra URL, pero se estiliza la celda) */
+td.mat-cell:nth-child(4) {
+  font-weight: 600;
+  color: #663300;
+}
+
+/* Filas alternas */
+tr.mat-row:nth-child(even) {
+  background: #FDF5E6;
+}
+
+tr.mat-row:nth-child(odd) {
+  background: #FFFFFF;
+}
+
+/* Hover estilo “selección de usuario” */
+tr.mat-row:hover {
+  background: rgba(255, 204, 2, 0.35) !important;
+  color: #663300;
+  transition: 0.25s ease;
+}
+
+/* Botones */
+button[matbutton], button {
+  background: none !important;
+  border: none !important;
+  cursor: pointer;
+  padding: 4px;
+}
+
+button mat-icon {
+  font-size: 22px;
+  transition: 0.2s ease;
+}
+
+/* Eliminar */
+button mat-icon {
+  color: #D32F2F;
+}
+
+button:hover mat-icon {
+  color: #9A0000;
+  transform: scale(1.15);
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  th.mat-header-cell, td.mat-cell {
+    font-size: 12px;
+    padding: 8px;
+  }
+}

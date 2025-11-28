@@ -1,0 +1,73 @@
+<app-menu></app-menu>
+
+<div class="dashboard-container">
+
+  <!-- HERO -->
+  <div class="dashboard-hero">
+    <div class="hero-text">
+      <h1>Bienvenido a <span>FoodSave</span></h1>
+      <p>Gestiona tus productos, inventario, recetas y más con eficiencia y estilo.</p>
+    </div>
+    <div class="hero-img">
+      <img src="assets/logo/logo.png" alt="FoodSave" />
+    </div>
+  </div>
+
+  <!-- CARDS PRINCIPALES -->
+  <div class="card-grid">
+
+    <mat-card class="dashboard-card" routerLink="/inventario/listas">
+      <mat-icon>inventory_2</mat-icon>
+      <h3>Inventario</h3>
+      <p>Controla tus insumos y evita pérdidas por vencimiento.</p>
+    </mat-card>
+
+    <mat-card class="dashboard-card" routerLink="/producto/listas">
+      <mat-icon>shopping_basket</mat-icon>
+      <h3>Productos</h3>
+      <p>Administra tus productos y mantén tu stock actualizado.</p>
+    </mat-card>
+
+    <mat-card class="dashboard-card" routerLink="/receta/listas">
+      <mat-icon>menu_book</mat-icon>
+      <h3>Recetas</h3>
+      <p>Descubre y gestiona recetas creadas con tus productos.</p>
+    </mat-card>
+
+    <mat-card class="dashboard-card" routerLink="/escaneo/listas">
+      <mat-icon>qr_code_scanner</mat-icon>
+      <h3>Escaneos</h3>
+      <p>Escanea productos para registrarlos más rápido.</p>
+    </mat-card>
+
+    <mat-card class="dashboard-card" routerLink="/notificacion/listas">
+      <mat-icon>notifications_active</mat-icon>
+      <h3>Notificaciones</h3>
+      <p>Revisa alertas por vencimiento y acciones importantes.</p>
+    </mat-card>
+
+    <!-- ARREGLADO: ruta correcta para /ingrediente -->
+    <mat-card class="dashboard-card" routerLink="/ingrediente/listas">
+      <mat-icon>restaurant</mat-icon>
+      <h3>Ingredientes</h3>
+      <p>Gestiona los ingredientes para tus recetas.</p>
+    </mat-card>
+
+    <!-- IA DEEPSEEK -->
+    <mat-card class="dashboard-card ia-card" routerLink="/ia">
+      <mat-icon>psychology</mat-icon>
+      <h3>Recetas con IA</h3>
+      <p>Genera recetas inteligentes usando DeepSeek API.</p>
+    </mat-card>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="dashboard-footer">
+    <p>🌱 <strong>FoodSave</strong> te ayuda a reducir desperdicios y mejorar tu consumo inteligente.</p>
+  </div>
+
+</div>
+
+<router-outlet></router-outlet>
+

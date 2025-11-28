@@ -1,0 +1,9 @@
+export class Producto {
+    idProducto: number = 0
+    nombre: string = ''
+    categoria: string = ''
+    vidaUtilDias: number = 0
+    estado: string = ''
+    codigoBarras: string = ''
+    pesoUnitario: number = 0
+}
