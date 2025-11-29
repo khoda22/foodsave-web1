@@ -1,2 +1,83 @@
 <p>recetainsertar works!</p>
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>{{ edicion ? 'Editar Receta' : 'Registrar Receta' }}</h2>
+  </div>
+  <div style="text-align: center; margin: 3%">
+    <form [formGroup]="form" (submit)="aceptar()">
+      <!--Editar-->
+      @if (edicion) {
+      <mat-form-field>
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="id" required />
+
+        @if (form.get('id')?.hasError('required')) {
+        <mat-error>El campo id es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      }
+      <br />
+
+      <mat-form-field>
+        <mat-label>Titulo</mat-label>
+        <input matInput formControlName="tituloR" required />
+
+        @if (form.get('tituloR')?.hasError('required')) {
+        <mat-error>Ingrese titulo!!.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Instrucciones</mat-label>
+        <textarea matInput formControlName="instruccionesR" required></textarea>
+
+        @if (form.get('instruccionesR')?.hasError('required')) {
+        <mat-error>Ingrese instrucciones!!.</mat-error>
+        }
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Dificultad:</mat-label>
+        <mat-select formControlName="dificultadR" required>
+          @for (p of tipos; track p.value) {
+          <mat-option [value]="p.value">
+            {{ p.viewValue }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('dificultadR')?.hasError('required')) {
+        <mat-error>puntua la dificultad!!</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Tiempo de preparación</mat-label>
+        <input matInput formControlName="tiempoPreparacionR" type="number" />
+        <mat-error>
+          @if (form.get('tiempoPreparacionR')?.hasError('required')) { Ingrese tiempo de
+          preparación!! }
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Autor</mat-label>
+        <input matInput formControlName="creadoPorR" required />
+
+        @if (form.get('creadoPorR')?.hasError('required')) {
+        <mat-error>Ingrese autor!!.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <button matButton="elevated">{{ edicion ? 'Actualizar' : 'Registrar' }}</button>
+
+      <br />
+    </form>
+  </div>
+</div>
 
