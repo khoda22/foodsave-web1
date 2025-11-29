@@ -1,2 +1,74 @@
-<p>escaneoinsertar works!</p>
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>Escaneo</h2>
+  </div>
+  <div style="text-align: center; margin: 3%">
+    <form [formGroup]="form" (submit)="aceptar()">
+      
+      <mat-form-field>
+        <mat-label>Fecha</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fecha" [max]="today"  required/>
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
 
+        @if (form.get('fecha')?.hasError('required')) {
+        <mat-error>El campo fecha es obligatorio.</mat-error>
+        } 
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Origen</mat-label>
+        <mat-select formControlName="origenE" required>
+          @for (p of tipos; track p.value) {
+          <mat-option [value]="p.value">
+            {{ p.viewValue }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('origenE')?.hasError('required')) {
+        <mat-error>Ingresa origen!!</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>usuario</mat-label>
+        <mat-select formControlName="usuario" required>
+          @for (p of listaUsuarios; track p.idUsuario) {
+          <mat-option [value]="p.idUsuario">
+            {{ p.username }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('usuario')?.hasError('required')) {
+        <mat-error>El campo usuario es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      <br>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Receta</mat-label>
+        <mat-select formControlName="receta" required>
+          @for (p of listaProductos; track p.idProducto) {
+          <mat-option [value]="p.idProducto">
+            {{ p.nombre }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('receta')?.hasError('required')) {
+        <mat-error>El campo producto es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      <br>
+
+      <button matButton="elevated">Registrar</button>
+
+      <br />
+    </form>
+  </div>
+</div>

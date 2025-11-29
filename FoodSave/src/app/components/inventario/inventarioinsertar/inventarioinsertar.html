@@ -1,2 +1,99 @@
-<p>inventarioinsertar works!</p>
+<div class="container">
+  <div style="text-align: center; margin: 3%">
+    <h2>{{ edicion ? 'Editar Inventario' : 'Registrar Inventario' }}</h2>
+  </div>
+  <div style="text-align: center; margin: 3%">
+    <form [formGroup]="form" (submit)="aceptar()">
 
+      <!--Editar-->
+      @if (edicion) {
+      <mat-form-field>
+        <mat-label>Código</mat-label>
+        <input matInput formControlName="id" required />
+
+        @if (form.get('id')?.hasError('required')) {
+        <mat-error>El campo id es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      }
+      <br>
+
+      <mat-form-field>
+        <mat-label>Cantidad Inventario</mat-label>
+        <input matInput formControlName="cantidad" type="number" />
+        <mat-error>
+          @if (form.get('cantidad')?.hasError('required')) { Ingrese cantidad!! }
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Dias de Duracion</mat-label>
+        <input matInput formControlName="diasduracion" type="number" />
+        <mat-error>
+          @if (form.get('diasduracion')?.hasError('required')) { Ingrese dias duracion!! }
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Estado</mat-label>
+        <input matInput formControlName="estado" required />
+
+        @if (form.get('estado')?.hasError('required')) {
+        <mat-error>Ingrese estado!!.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Fecha Vencimiento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="fechavencimiento" required />
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+        @if (form.get('fechavencimiento')?.hasError('required')) {
+        <mat-error>El campo fecha es obligatorio.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Usuario</mat-label>
+        <mat-select formControlName="usuario" required>
+          @for (p of listaUsuarios; track p.idUsuario) {
+          <mat-option [value]="p.idUsuario">
+            {{ p.username }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('usuario')?.hasError('required')) {
+        <mat-error>Ingrese usuario.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Producto</mat-label>
+        <mat-select formControlName="producto" required>
+          @for (p of listaProductos; track p.idProducto) {
+          <mat-option [value]="p.idProducto">
+            {{ p.nombre }}
+          </mat-option>
+          }
+        </mat-select>
+
+        @if (form.get('producto')?.hasError('required')) {
+        <mat-error>Ingrese producto.</mat-error>
+        }
+      </mat-form-field>
+      <br />
+
+      <button matButton="elevated">{{ edicion ? 'Actualizar' : 'Registrar' }}</button>
+
+      <br />
+    </form>
+  </div>
+</div>

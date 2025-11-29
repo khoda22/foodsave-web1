@@ -1,3 +1,65 @@
-<p>escaneolistar works!</p>
+<p>recetalistar works!</p>
 
+<div class="container">
+  <div style="text-align: center; margin: 5%">
+    <h1>Recetas</h1>
+  </div>
+  <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
+      <ng-container matColumnDef="c1">
+        <th mat-header-cell *matHeaderCellDef>Titulo</th>
+        <td mat-cell *matCellDef="let element">{{ element.titulo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c2">
+        <th mat-header-cell *matHeaderCellDef>Instrucciones</th>
+        <td mat-cell *matCellDef="let element">{{ element.instrucciones }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c3">
+        <th mat-header-cell *matHeaderCellDef>dificultad</th>
+        <td mat-cell *matCellDef="let element">{{ element.dificultad }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c4">
+        <th mat-header-cell *matHeaderCellDef>Tiempo de preparacion</th>
+        <td mat-cell *matCellDef="let element">{{ element.tiempoPreparacion }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c5">
+        <th mat-header-cell *matHeaderCellDef>Autor</th>
+        <td mat-cell *matCellDef="let element">{{ element.creadoPor }}</td>
+      </ng-container>
+
+      
+
+      <ng-container matColumnDef="c6">
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+        <td mat-cell *matCellDef="let element">
+          <button  matButton
+            [routerLink]="['/receta/edits',element.idReceta]" >
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+      
+      <!-- eliminar -->
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="c7">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let element">
+          <button 
+          matButton
+          (click)="eliminar(element.idReceta)"
+          >
+          <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+  </div>
+</div>

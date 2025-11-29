@@ -31,4 +31,8 @@ export class Escaneoservice {
   getList(){ //insertar paso 4
     return this.listaCambio.asObservable()
   }
+  //Eliminar
+  delete(id: number) {
+    return this.http.delete(`${this.url}/${id}`, { responseType: 'text' });
+  }
 }
