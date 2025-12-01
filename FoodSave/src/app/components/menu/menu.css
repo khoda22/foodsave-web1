@@ -7,7 +7,7 @@ mat-toolbar {
   z-index: 1000;
 
   /* Color principal con degradado suave */
-  background: linear-gradient(180deg, #FFF0D4 0%, #FFE8B8 100%);
+  background: linear-gradient(180deg, #FFE8B8 0%, #FFE8B8 100%);
   color: #012F16;
 
   padding: 8px 25px;
@@ -103,7 +103,7 @@ mat-menu button {
 }
 
 mat-menu button:hover {
-  background: #FFF0D4 !important;
+  background: #FFE8B8 !important;
 }
 
 mat-menu mat-icon {

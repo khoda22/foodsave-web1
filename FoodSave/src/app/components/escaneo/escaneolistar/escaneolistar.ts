@@ -29,11 +29,4 @@ export class Escaneolistar implements OnInit {
       this.dataSource = new MatTableDataSource(data)
     })
   }
-  eliminar(id: number) {
-    this.eS.delete(id).subscribe((data) => {
-      this.eS.list().subscribe((data) => {
-        this.eS.setList(data);
-      });
-    });
-  }
 }
