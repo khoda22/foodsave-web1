@@ -4,7 +4,7 @@
   max-width: 600px;
   margin: 40px auto;
   padding: 35px;
-  background: #FFFFFF;
+  background: #D2D497;
   border-radius: 20px;
   box-shadow: 0px 6px 20px rgba(0,0,0,0.08);
   font-family: 'Montserrat', sans-serif;
@@ -45,22 +45,25 @@ mat-error {
   color: #D32F2F !important;
 }
 
+/* Botón */
 button[matbutton="elevated"], 
+button[mat-raised-button], 
 button {
-  width: 100%;
+  width: 50%;
   padding: 12px 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   font-size: 16px;
   border-radius: 12px;
-  background-color: #FFCC02;
-  color: #663300;
+
+  background-color: #FFF0D4; /* Amarillo de marca */
+  color: #012F16; /* Café de marca */
   transition: all 0.25s ease;
 }
 
 button:hover {
-  background-color: #B6C471;
-  color: #012F16;
+  background-color: #FFCC02; /* Verde claro */
+  color: #012F16; /* Verde oscuro */
   transform: translateY(-2px);
 }
 

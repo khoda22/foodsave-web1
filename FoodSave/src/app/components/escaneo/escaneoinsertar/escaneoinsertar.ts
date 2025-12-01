@@ -32,16 +32,17 @@ import { MatSelectModule } from '@angular/material/select';
 export class Escaneoinsertar implements OnInit {
   form: FormGroup = new FormGroup({});
   esc: Escaneo = new Escaneo();
-
+  
+  id: number = 0;
   today = new Date();
 
   listaUsuarios: Usuario[] = [];
   listaProductos: Producto[] = [];
 
-  tipos: { value: string; viewValue: string }[] = [
+tipos: { value: string; viewValue: string }[] = [
     { value: 'QR Code', viewValue: 'QR Code' },
     { value: 'Codabar', viewValue: 'Codabar' },
-  ];
+];
 
   constructor(
     private eS: Escaneoservice,
@@ -67,6 +68,7 @@ export class Escaneoinsertar implements OnInit {
       producto: ['', Validators.required],
     });
   }
+  
   aceptar(): void {
     if (this.form.valid) {
       this.esc.idEscaneo = this.form.value.id;

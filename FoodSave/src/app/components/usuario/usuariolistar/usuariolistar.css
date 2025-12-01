@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@300;400;500;600&display=swap');
 
-/* Fondo temático: experiencia de usuario + estilo social */
-.container {
-  min-height: 100vh;
-  padding: 40px 20px;
-  background: linear-gradient(135deg, #B6C471 0%, #FFF0D4 40%, #EF9145 100%);
-  font-family: 'Montserrat', sans-serif;
-}
 
 /* Título estilo “perfil / red social saludable” */
 h1 {

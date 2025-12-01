@@ -51,8 +51,8 @@
       <br>
 
       <mat-form-field class="example-full-width">
-        <mat-label>Receta</mat-label>
-        <mat-select formControlName="receta" required>
+        <mat-label>Producto</mat-label>
+        <mat-select formControlName="producto" required>
           @for (p of listaProductos; track p.idProducto) {
           <mat-option [value]="p.idProducto">
             {{ p.nombre }}
@@ -60,7 +60,7 @@
           }
         </mat-select>
 
-        @if (form.get('receta')?.hasError('required')) {
+        @if (form.get('producto')?.hasError('required')) {
         <mat-error>El campo producto es obligatorio.</mat-error>
         }
       </mat-form-field>
